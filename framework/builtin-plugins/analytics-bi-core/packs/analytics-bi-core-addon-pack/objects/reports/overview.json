@@ -1,0 +1,18 @@
+{
+  "pluginId": "analytics-bi-core",
+  "reports": [
+    "Executive KPI Summary",
+    "Dataset Freshness",
+    "Cross-Domain Exception Dashboard"
+  ],
+  "exceptionQueues": [
+    "warehouse-sync-failures",
+    "stale-kpi-refresh",
+    "dataset-contract-drift"
+  ],
+  "operationalScenarios": [
+    "dataset-publication",
+    "kpi-refresh",
+    "warehouse-sync-enqueue"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "workflowId": "analytics-bi-lifecycle",
+  "actors": [
+    "analyst",
+    "revops",
+    "controller"
+  ],
+  "description": "Publish datasets, refresh KPIs, sync analytics surfaces, and reconcile reporting drift."
+}

@@ -1,0 +1,9 @@
+{
+  "workspace": "analytics",
+  "route": "/admin/business/analytics",
+  "pageTitle": "Analytics & BI Control Room",
+  "defaultRecordState": "draft",
+  "defaultApprovalState": "pending",
+  "defaultPostingState": "unposted",
+  "defaultFulfillmentState": "none"
+}

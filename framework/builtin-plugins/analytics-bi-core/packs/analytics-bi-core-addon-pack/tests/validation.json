@@ -1,0 +1,24 @@
+{
+  "packageId": "analytics-bi-core",
+  "packName": "analytics-bi-core-addon-pack",
+  "expectedActions": [
+    "analytics.datasets.publish",
+    "analytics.kpis.refresh",
+    "analytics.warehouse-sync.enqueue"
+  ],
+  "expectedResources": [
+    "analytics.datasets",
+    "analytics.kpis",
+    "analytics.warehouse-sync"
+  ],
+  "expectedReports": [
+    "Executive KPI Summary",
+    "Dataset Freshness",
+    "Cross-Domain Exception Dashboard"
+  ],
+  "expectedExceptionQueues": [
+    "warehouse-sync-failures",
+    "stale-kpi-refresh",
+    "dataset-contract-drift"
+  ]
+}

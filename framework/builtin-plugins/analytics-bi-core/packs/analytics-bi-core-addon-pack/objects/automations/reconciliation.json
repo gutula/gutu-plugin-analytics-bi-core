@@ -1,0 +1,10 @@
+{
+  "automationId": "analytics-bi-core.reconciliation.default",
+  "trigger": "exception-record-opened",
+  "action": "analytics.reconciliation.run",
+  "queues": [
+    "warehouse-sync-failures",
+    "stale-kpi-refresh",
+    "dataset-contract-drift"
+  ]
+}
