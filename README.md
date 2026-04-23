@@ -26,7 +26,7 @@ Business datasets, KPI models, warehouse-sync posture, and governed analytics pr
 
 Owns governed datasets, KPI models, and warehouse-sync posture so heavy analytics does not sprawl into transactional plugins.
 
-- Exports 3 governed actions: `analytics.datasets.publish`, `analytics.kpis.refresh`, `analytics.warehouse-sync.enqueue`.
+- Exports 7 governed actions: `analytics.datasets.publish`, `analytics.kpis.refresh`, `analytics.warehouse-sync.enqueue`, `analytics.datasets.hold`, `analytics.datasets.release`, `analytics.datasets.amend`, `analytics.datasets.reverse`.
 - Owns 3 resource contracts: `analytics.datasets`, `analytics.kpis`, `analytics.warehouse-sync`.
 - Publishes 2 job definitions with explicit queue and retry policy metadata.
 - Publishes 1 workflow definition with state-machine descriptions and mandatory steps.
@@ -71,7 +71,7 @@ This tier is justified because unit coverage exists, contract coverage exists, i
 
 | Surface | Count | Details |
 | --- | --- | --- |
-| Actions | 3 | `analytics.datasets.publish`, `analytics.kpis.refresh`, `analytics.warehouse-sync.enqueue` |
+| Actions | 7 | `analytics.datasets.publish`, `analytics.kpis.refresh`, `analytics.warehouse-sync.enqueue`, `analytics.datasets.hold`, `analytics.datasets.release`, `analytics.datasets.amend`, `analytics.datasets.reverse` |
 | Resources | 3 | `analytics.datasets`, `analytics.kpis`, `analytics.warehouse-sync` |
 | Jobs | 2 | `analytics.projections.refresh`, `analytics.reconciliation.run` |
 | Workflows | 1 | `analytics-bi-lifecycle` |
@@ -96,10 +96,10 @@ bun run docs:check
 ```
 
 ```ts
-import { manifest, createPrimaryRecordAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/analytics-bi-core";
+import { manifest, publishAnalyticsDatasetAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/analytics-bi-core";
 
 console.log(manifest.id);
-console.log(createPrimaryRecordAction.id);
+console.log(publishAnalyticsDatasetAction.id);
 console.log(BusinessPrimaryResource.id);
 ```
 

@@ -4,7 +4,7 @@
 
 ## Shipped Now
 
-- Exports 3 governed actions: `analytics.datasets.publish`, `analytics.kpis.refresh`, `analytics.warehouse-sync.enqueue`.
+- Exports 7 governed actions: `analytics.datasets.publish`, `analytics.kpis.refresh`, `analytics.warehouse-sync.enqueue`, `analytics.datasets.hold`, `analytics.datasets.release`, `analytics.datasets.amend`, `analytics.datasets.reverse`.
 - Owns 3 resource contracts: `analytics.datasets`, `analytics.kpis`, `analytics.warehouse-sync`.
 - Publishes 2 job definitions with explicit queue and retry policy metadata.
 - Publishes 1 workflow definition with state-machine descriptions and mandatory steps.
@@ -18,7 +18,7 @@
 
 ## Current Gaps
 
-- Repo-local documentation verification entrypoints were missing before this pass and need to stay green as the repo evolves.
+- No additional gaps were identified beyond the plugin’s stated non-goals.
 
 ## Recommended Next
 

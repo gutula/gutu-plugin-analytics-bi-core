@@ -109,7 +109,11 @@ export default definePackage({
   "publicCommands": [
     "analytics.datasets.publish",
     "analytics.kpis.refresh",
-    "analytics.warehouse-sync.enqueue"
+    "analytics.warehouse-sync.enqueue",
+    "analytics.datasets.hold",
+    "analytics.datasets.release",
+    "analytics.datasets.amend",
+    "analytics.datasets.reverse"
   ],
   "publicQueries": [
     "analytics.dataset-summary",

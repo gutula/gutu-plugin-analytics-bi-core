@@ -5,6 +5,10 @@
 - `analytics.datasets.publish`: Publish Analytics Dataset
 - `analytics.kpis.refresh`: Refresh KPI Definitions
 - `analytics.warehouse-sync.enqueue`: Enqueue Warehouse Sync
+- `analytics.datasets.hold`: Place Record On Hold
+- `analytics.datasets.release`: Release Record Hold
+- `analytics.datasets.amend`: Amend Record
+- `analytics.datasets.reverse`: Reverse Record
 
 ## Operational scenario matrix
 
@@ -69,6 +73,106 @@ Forbidden shortcuts:
 Enqueue Warehouse Sync
 
 Permission: `analytics.warehouse-sync.write`
+
+Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
+
+Preconditions:
+
+- Caller input must satisfy the action schema exported by the plugin.
+- The caller must satisfy the declared permission and any host-level installation constraints.
+- Integration should honor the action’s non-idempotent semantics.
+
+Side effects:
+
+- Mutates or validates state owned by `analytics.datasets`, `analytics.kpis`, `analytics.warehouse-sync`.
+- May schedule or describe follow-up background work.
+
+Forbidden shortcuts:
+
+- Do not bypass the action contract with undocumented service mutations in application code.
+- Do not document extra hooks, retries, or lifecycle semantics unless they are explicitly exported here.
+
+
+### `analytics.datasets.hold`
+
+Place Record On Hold
+
+Permission: `analytics.datasets.write`
+
+Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
+
+Preconditions:
+
+- Caller input must satisfy the action schema exported by the plugin.
+- The caller must satisfy the declared permission and any host-level installation constraints.
+- Integration should honor the action’s non-idempotent semantics.
+
+Side effects:
+
+- Mutates or validates state owned by `analytics.datasets`, `analytics.kpis`, `analytics.warehouse-sync`.
+- May schedule or describe follow-up background work.
+
+Forbidden shortcuts:
+
+- Do not bypass the action contract with undocumented service mutations in application code.
+- Do not document extra hooks, retries, or lifecycle semantics unless they are explicitly exported here.
+
+
+### `analytics.datasets.release`
+
+Release Record Hold
+
+Permission: `analytics.datasets.write`
+
+Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
+
+Preconditions:
+
+- Caller input must satisfy the action schema exported by the plugin.
+- The caller must satisfy the declared permission and any host-level installation constraints.
+- Integration should honor the action’s non-idempotent semantics.
+
+Side effects:
+
+- Mutates or validates state owned by `analytics.datasets`, `analytics.kpis`, `analytics.warehouse-sync`.
+- May schedule or describe follow-up background work.
+
+Forbidden shortcuts:
+
+- Do not bypass the action contract with undocumented service mutations in application code.
+- Do not document extra hooks, retries, or lifecycle semantics unless they are explicitly exported here.
+
+
+### `analytics.datasets.amend`
+
+Amend Record
+
+Permission: `analytics.datasets.write`
+
+Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
+
+Preconditions:
+
+- Caller input must satisfy the action schema exported by the plugin.
+- The caller must satisfy the declared permission and any host-level installation constraints.
+- Integration should honor the action’s non-idempotent semantics.
+
+Side effects:
+
+- Mutates or validates state owned by `analytics.datasets`, `analytics.kpis`, `analytics.warehouse-sync`.
+- May schedule or describe follow-up background work.
+
+Forbidden shortcuts:
+
+- Do not bypass the action contract with undocumented service mutations in application code.
+- Do not document extra hooks, retries, or lifecycle semantics unless they are explicitly exported here.
+
+
+### `analytics.datasets.reverse`
+
+Reverse Record
+
+Permission: `analytics.datasets.write`
 
 Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
 

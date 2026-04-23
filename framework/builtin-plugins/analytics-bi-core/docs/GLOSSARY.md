@@ -9,6 +9,10 @@
 | analytics.datasets.publish | Publish Analytics Dataset |
 | analytics.kpis.refresh | Refresh KPI Definitions |
 | analytics.warehouse-sync.enqueue | Enqueue Warehouse Sync |
+| analytics.datasets.hold | Place Record On Hold |
+| analytics.datasets.release | Release Record Hold |
+| analytics.datasets.amend | Amend Record |
+| analytics.datasets.reverse | Reverse Record |
 | analytics.projections.refresh | Job definition queued on `analytics-projections`. |
 | analytics.reconciliation.run | Job definition queued on `analytics-reconciliation`. |
 | analytics-bi-lifecycle | Publish datasets, refresh KPIs, sync analytics surfaces, and reconcile reporting drift. |

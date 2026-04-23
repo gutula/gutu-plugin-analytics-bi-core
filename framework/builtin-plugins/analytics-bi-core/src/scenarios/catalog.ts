@@ -6,7 +6,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "analytics.datasets.publish",
       "analytics.kpis.refresh",
-      "analytics.warehouse-sync.enqueue"
+      "analytics.warehouse-sync.enqueue",
+      "analytics.datasets.hold",
+      "analytics.datasets.release",
+      "analytics.datasets.amend",
+      "analytics.datasets.reverse"
     ],
     "downstreamTargets": {
       "create": [],
@@ -25,7 +29,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "analytics.datasets.publish",
       "analytics.kpis.refresh",
-      "analytics.warehouse-sync.enqueue"
+      "analytics.warehouse-sync.enqueue",
+      "analytics.datasets.hold",
+      "analytics.datasets.release",
+      "analytics.datasets.amend",
+      "analytics.datasets.reverse"
     ],
     "downstreamTargets": {
       "create": [],
@@ -44,7 +52,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "analytics.datasets.publish",
       "analytics.kpis.refresh",
-      "analytics.warehouse-sync.enqueue"
+      "analytics.warehouse-sync.enqueue",
+      "analytics.datasets.hold",
+      "analytics.datasets.release",
+      "analytics.datasets.amend",
+      "analytics.datasets.reverse"
     ],
     "downstreamTargets": {
       "create": [],

@@ -71,6 +71,10 @@ Owns governed datasets, KPI models, and warehouse-sync posture so heavy analytic
 | Action | `analytics.datasets.publish` | Permission: `analytics.datasets.write` | Publish Analytics Dataset<br>Idempotent<br>Audited |
 | Action | `analytics.kpis.refresh` | Permission: `analytics.kpis.write` | Refresh KPI Definitions<br>Non-idempotent<br>Audited |
 | Action | `analytics.warehouse-sync.enqueue` | Permission: `analytics.warehouse-sync.write` | Enqueue Warehouse Sync<br>Non-idempotent<br>Audited |
+| Action | `analytics.datasets.hold` | Permission: `analytics.datasets.write` | Place Record On Hold<br>Non-idempotent<br>Audited |
+| Action | `analytics.datasets.release` | Permission: `analytics.datasets.write` | Release Record Hold<br>Non-idempotent<br>Audited |
+| Action | `analytics.datasets.amend` | Permission: `analytics.datasets.write` | Amend Record<br>Non-idempotent<br>Audited |
+| Action | `analytics.datasets.reverse` | Permission: `analytics.datasets.write` | Reverse Record<br>Non-idempotent<br>Audited |
 | Resource | `analytics.datasets` | Portal disabled | Dataset definitions, governed exports, and projection-ready analytics records.<br>Purpose: Own business-facing datasets without coupling reporting logic into transactional domains.<br>Admin auto-CRUD enabled<br>Fields: `title`, `recordState`, `approvalState`, `postingState`, `fulfillmentState`, `updatedAt` |
 | Resource | `analytics.kpis` | Portal disabled | KPI definitions, refresh posture, and threshold records.<br>Purpose: Keep executive and operational metrics explicit, versioned, and reviewable.<br>Admin auto-CRUD enabled<br>Fields: `label`, `status`, `requestedAction`, `updatedAt` |
 | Resource | `analytics.warehouse-sync` | Portal disabled | Warehouse or BI sync queues and exception records.<br>Purpose: Expose heavy analytics sync work and repair state explicitly.<br>Admin auto-CRUD enabled<br>Fields: `severity`, `status`, `reasonCode`, `updatedAt` |
@@ -156,11 +160,11 @@ stateDiagram-v2
 ### 1. Host wiring
 
 ```ts
-import { manifest, createPrimaryRecordAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/analytics-bi-core";
+import { manifest, publishAnalyticsDatasetAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/analytics-bi-core";
 
 export const pluginSurface = {
   manifest,
-  createPrimaryRecordAction,
+  publishAnalyticsDatasetAction,
   BusinessPrimaryResource,
   jobDefinitions,
   workflowDefinitions,
@@ -174,10 +178,10 @@ Use this pattern when your host needs to register the plugin’s declared export
 ### 2. Action-first orchestration
 
 ```ts
-import { manifest, createPrimaryRecordAction } from "@plugins/analytics-bi-core";
+import { manifest, publishAnalyticsDatasetAction } from "@plugins/analytics-bi-core";
 
 console.log("plugin", manifest.id);
-console.log("action", createPrimaryRecordAction.id);
+console.log("action", publishAnalyticsDatasetAction.id);
 ```
 
 - Prefer action IDs as the stable integration boundary.
@@ -219,7 +223,7 @@ console.log("action", createPrimaryRecordAction.id);
 
 ### Current truth
 
-- Exports 3 governed actions: `analytics.datasets.publish`, `analytics.kpis.refresh`, `analytics.warehouse-sync.enqueue`.
+- Exports 7 governed actions: `analytics.datasets.publish`, `analytics.kpis.refresh`, `analytics.warehouse-sync.enqueue`, `analytics.datasets.hold`, `analytics.datasets.release`, `analytics.datasets.amend`, `analytics.datasets.reverse`.
 - Owns 3 resource contracts: `analytics.datasets`, `analytics.kpis`, `analytics.warehouse-sync`.
 - Publishes 2 job definitions with explicit queue and retry policy metadata.
 - Publishes 1 workflow definition with state-machine descriptions and mandatory steps.
@@ -233,7 +237,7 @@ console.log("action", createPrimaryRecordAction.id);
 
 ### Current gaps
 
-- Repo-local documentation verification entrypoints were missing before this pass and need to stay green as the repo evolves.
+- No extra gaps were discovered beyond the plugin’s declared boundaries.
 
 ### Recommended next
 
