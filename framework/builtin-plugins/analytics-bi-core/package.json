@@ -36,10 +36,6 @@
     "@plugins/audit-core": "workspace:*",
     "@plugins/workflow-core": "workspace:*",
     "@plugins/dashboard-core": "workspace:*",
-    "@plugins/traceability-core": "workspace:*",
-    "@plugins/accounting-core": "workspace:*",
-    "@plugins/sales-core": "workspace:*",
-    "@plugins/procurement-core": "workspace:*",
-    "@plugins/inventory-core": "workspace:*"
+    "@plugins/traceability-core": "workspace:*"
   }
 }

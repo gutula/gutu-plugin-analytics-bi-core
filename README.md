@@ -61,11 +61,26 @@ This tier is justified because unit coverage exists, contract coverage exists, i
 | Manifest ID | `analytics-bi-core` |
 | Repo | [gutu-plugin-analytics-bi-core](https://github.com/gutula/gutu-plugin-analytics-bi-core) |
 | Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `dashboard-core`, `traceability-core`, `accounting-core`, `sales-core`, `procurement-core`, `inventory-core` |
+| Recommended Plugins | None |
+| Capability Enhancing | None |
+| Integration Only | None |
+| Suggested Packs | None |
+| Standalone Supported | Yes |
 | Requested Capabilities | `ui.register.admin`, `api.rest.mount`, `data.write.analytics`, `events.publish.analytics` |
 | Provided Capabilities | `analytics.datasets`, `analytics.kpis`, `analytics.warehouse-sync` |
 | Runtime | bun>=1.3.12 |
 | Database | postgres, sqlite |
 | Integration Model | Actions+Resources+Jobs+Workflows+UI |
+
+## Installation Guidance
+
+- Required plugins: `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `dashboard-core`, `traceability-core`, `accounting-core`, `sales-core`, `procurement-core`, `inventory-core`
+- Recommended plugins: none
+- Capability-enhancing plugins: none
+- Integration-only plugins: none
+- Suggested packs: none
+- Standalone supported: yes
+
 
 ## Capability Matrix
 

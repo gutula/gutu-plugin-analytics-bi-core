@@ -23,11 +23,7 @@ export default definePackage({
     "audit-core",
     "workflow-core",
     "dashboard-core",
-    "traceability-core",
-    "accounting-core",
-    "sales-core",
-    "procurement-core",
-    "inventory-core"
+    "traceability-core"
   ],
   "dependencyContracts": [
     {
@@ -67,26 +63,80 @@ export default definePackage({
     },
     {
       "packageId": "accounting-core",
-      "class": "required",
-      "rationale": "Required for Analytics & BI Core to keep its boundary governed and explicit."
+      "class": "optional",
+      "rationale": "Recommended with Analytics & BI Core for smoother production adoption and operator experience."
     },
     {
       "packageId": "sales-core",
-      "class": "required",
-      "rationale": "Required for Analytics & BI Core to keep its boundary governed and explicit."
+      "class": "capability-enhancing",
+      "rationale": "Improves Analytics & BI Core with deeper downstream automation, visibility, or workflow coverage."
     },
     {
       "packageId": "procurement-core",
-      "class": "required",
-      "rationale": "Required for Analytics & BI Core to keep its boundary governed and explicit."
+      "class": "capability-enhancing",
+      "rationale": "Improves Analytics & BI Core with deeper downstream automation, visibility, or workflow coverage."
     },
     {
       "packageId": "inventory-core",
-      "class": "required",
-      "rationale": "Required for Analytics & BI Core to keep its boundary governed and explicit."
+      "class": "capability-enhancing",
+      "rationale": "Improves Analytics & BI Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "projects-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Analytics & BI Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "support-service-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Analytics & BI Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "manufacturing-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Analytics & BI Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "hr-payroll-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Analytics & BI Core with deeper downstream automation, visibility, or workflow coverage."
     }
   ],
-  "optionalWith": [],
+  "recommendedPlugins": [
+    "accounting-core"
+  ],
+  "capabilityEnhancingPlugins": [
+    "sales-core",
+    "procurement-core",
+    "inventory-core",
+    "projects-core",
+    "support-service-core",
+    "manufacturing-core",
+    "hr-payroll-core"
+  ],
+  "integrationOnlyPlugins": [],
+  "suggestedPacks": [
+    "localization-global-base",
+    "localization-india",
+    "localization-united-states",
+    "sector-ecommerce",
+    "sector-education",
+    "sector-epc-professional-delivery",
+    "sector-financial-services-compliance",
+    "sector-healthcare",
+    "sector-manufacturing",
+    "sector-nonprofit",
+    "sector-professional-services",
+    "sector-retail",
+    "sector-trading-distribution"
+  ],
+  "standaloneSupported": false,
+  "installNotes": [
+    "Analytics becomes more valuable as more write-model plugins are present; it should usually be installed after the operational core."
+  ],
+  "optionalWith": [
+    "accounting-core"
+  ],
   "conflictsWith": [],
   "providesCapabilities": [
     "analytics.datasets",
