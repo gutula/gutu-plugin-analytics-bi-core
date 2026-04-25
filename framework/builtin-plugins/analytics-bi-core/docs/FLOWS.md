@@ -10,6 +10,26 @@
 - `analytics.datasets.amend`: Amend Record
 - `analytics.datasets.reverse`: Reverse Record
 
+## Native product flows
+
+The BI authoring flows are implemented by the product layer beside this plugin:
+
+- Explore semantic datasets through `/analytics/explore`.
+- Select dimensions, metrics, filters, limits, table calculations, and custom
+  metrics.
+- Run deterministic local-record queries and inspect compiled SQL previews.
+- Save charts, reopen direct chart URLs, edit charts, view chart history, and
+  roll back chart versions.
+- Create dashboards with tabs, filters, chart/markdown/heading tiles, editable
+  layouts, history, and rollback.
+- Organize charts and dashboards into spaces.
+- Create share URLs and delivery schedules, then inspect delivery-run logs.
+- Run validation over charts, dashboards, and schedules.
+
+These flows persist through `/api/analytics-bi/*` and the generic records table.
+They intentionally do not bypass the plugin's governed action/resource/job
+contracts for operational analytics work.
+
 ## Operational scenario matrix
 
 - `dataset-publication`

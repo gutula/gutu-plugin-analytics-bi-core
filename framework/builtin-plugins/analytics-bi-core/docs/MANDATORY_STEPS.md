@@ -2,7 +2,7 @@
 
 ## Before shipping a change
 
-1. Update the public contract docs in `README.md` and `DEVELOPER.md`.
+1. Update the public contract docs in `README.md`, `TODO.md`, and the nested docs that apply.
 2. Keep the nested docs under `framework/builtin-plugins/analytics-bi-core/docs` synchronized with the same truth.
 3. Run the repo-local verification commands:
    - `bun run build`
@@ -12,6 +12,8 @@
    - `bun run docs:check`
 4. Run any extra lanes present for this plugin: `test:unit`, `test:contracts`.
 5. Re-check that the plugin is still described through explicit command/resource/job/workflow contracts and not through undocumented hooks.
+6. If the change touches the native BI product layer, run the shared analytics
+   library and admin-panel checks from `docs/bi-lightdash-gap-report.md`.
 
 ## Before integrating from another plugin
 
