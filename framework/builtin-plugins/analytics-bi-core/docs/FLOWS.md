@@ -10,26 +10,6 @@
 - `analytics.datasets.amend`: Amend Record
 - `analytics.datasets.reverse`: Reverse Record
 
-## Native product flows
-
-The BI authoring flows are implemented by the product layer beside this plugin:
-
-- Explore semantic datasets through `/analytics/explore`.
-- Select dimensions, metrics, filters, limits, table calculations, and custom
-  metrics.
-- Run deterministic local-record queries and inspect compiled SQL previews.
-- Save charts, reopen direct chart URLs, edit charts, view chart history, and
-  roll back chart versions.
-- Create dashboards with tabs, filters, chart/markdown/heading tiles, editable
-  layouts, history, and rollback.
-- Organize charts and dashboards into spaces.
-- Create share URLs and delivery schedules, then inspect delivery-run logs.
-- Run validation over charts, dashboards, and schedules.
-
-These flows persist through `/api/analytics-bi/*` and the generic records table.
-They intentionally do not bypass the plugin's governed action/resource/job
-contracts for operational analytics work.
-
 ## Operational scenario matrix
 
 - `dataset-publication`
@@ -215,7 +195,7 @@ Forbidden shortcuts:
 
 ## Cross-package interactions
 
-- Direct dependencies: `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `dashboard-core`, `traceability-core`, `accounting-core`, `sales-core`, `procurement-core`, `inventory-core`
+- Direct dependencies: `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `dashboard-core`, `traceability-core`
 - Requested capabilities: `ui.register.admin`, `api.rest.mount`, `data.write.analytics`, `events.publish.analytics`
 - Integration model: Actions+Resources+Jobs+Workflows+UI
 - ERPNext doctypes used as parity references: `Financial Report Template`, `Ledger Health Monitor`, `Quick Stock Balance`, `Project Update`

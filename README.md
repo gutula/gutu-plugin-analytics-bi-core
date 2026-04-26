@@ -60,12 +60,12 @@ This tier is justified because unit coverage exists, contract coverage exists, i
 | Package | `@plugins/analytics-bi-core` |
 | Manifest ID | `analytics-bi-core` |
 | Repo | [gutu-plugin-analytics-bi-core](https://github.com/gutula/gutu-plugin-analytics-bi-core) |
-| Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `dashboard-core`, `traceability-core`, `accounting-core`, `sales-core`, `procurement-core`, `inventory-core` |
-| Recommended Plugins | None |
-| Capability Enhancing | None |
+| Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `dashboard-core`, `traceability-core` |
+| Recommended Plugins | `accounting-core` |
+| Capability Enhancing | `sales-core`, `procurement-core`, `inventory-core`, `projects-core`, `support-service-core`, `manufacturing-core`, `hr-payroll-core` |
 | Integration Only | None |
-| Suggested Packs | None |
-| Standalone Supported | Yes |
+| Suggested Packs | `localization-global-base`, `localization-india`, `localization-united-states`, `sector-ecommerce`, `sector-education`, `sector-epc-professional-delivery`, `sector-financial-services-compliance`, `sector-healthcare`, `sector-manufacturing`, `sector-nonprofit`, `sector-professional-services`, `sector-retail`, `sector-trading-distribution` |
+| Standalone Supported | No |
 | Requested Capabilities | `ui.register.admin`, `api.rest.mount`, `data.write.analytics`, `events.publish.analytics` |
 | Provided Capabilities | `analytics.datasets`, `analytics.kpis`, `analytics.warehouse-sync` |
 | Runtime | bun>=1.3.12 |
@@ -74,13 +74,13 @@ This tier is justified because unit coverage exists, contract coverage exists, i
 
 ## Installation Guidance
 
-- Required plugins: `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `dashboard-core`, `traceability-core`, `accounting-core`, `sales-core`, `procurement-core`, `inventory-core`
-- Recommended plugins: none
-- Capability-enhancing plugins: none
+- Required plugins: `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `dashboard-core`, `traceability-core`
+- Recommended plugins: `accounting-core`
+- Capability-enhancing plugins: `sales-core`, `procurement-core`, `inventory-core`, `projects-core`, `support-service-core`, `manufacturing-core`, `hr-payroll-core`
 - Integration-only plugins: none
-- Suggested packs: none
-- Standalone supported: yes
-
+- Suggested packs: `localization-global-base`, `localization-india`, `localization-united-states`, `sector-ecommerce`, `sector-education`, `sector-epc-professional-delivery`, `sector-financial-services-compliance`, `sector-healthcare`, `sector-manufacturing`, `sector-nonprofit`, `sector-professional-services`, `sector-retail`, `sector-trading-distribution`
+- Standalone supported: no
+- Analytics becomes more valuable as more write-model plugins are present; it should usually be installed after the operational core.
 
 ## Capability Matrix
 

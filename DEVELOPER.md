@@ -53,12 +53,12 @@ Owns governed datasets, KPI models, and warehouse-sync posture so heavy analytic
 
 | Field | Value |
 | --- | --- |
-| Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `dashboard-core`, `traceability-core`, `accounting-core`, `sales-core`, `procurement-core`, `inventory-core` |
-| Recommended Plugins | None |
-| Capability Enhancing | None |
+| Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `dashboard-core`, `traceability-core` |
+| Recommended Plugins | `accounting-core` |
+| Capability Enhancing | `sales-core`, `procurement-core`, `inventory-core`, `projects-core`, `support-service-core`, `manufacturing-core`, `hr-payroll-core` |
 | Integration Only | None |
-| Suggested Packs | None |
-| Standalone Supported | Yes |
+| Suggested Packs | `localization-global-base`, `localization-india`, `localization-united-states`, `sector-ecommerce`, `sector-education`, `sector-epc-professional-delivery`, `sector-financial-services-compliance`, `sector-healthcare`, `sector-manufacturing`, `sector-nonprofit`, `sector-professional-services`, `sector-retail`, `sector-trading-distribution` |
+| Standalone Supported | No |
 | Requested Capabilities | `ui.register.admin`, `api.rest.mount`, `data.write.analytics`, `events.publish.analytics` |
 | Provides Capabilities | `analytics.datasets`, `analytics.kpis`, `analytics.warehouse-sync` |
 | Owns Data | `analytics.datasets`, `analytics.kpis`, `analytics.warehouse-sync`, `analytics.exceptions` |

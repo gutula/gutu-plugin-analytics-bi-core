@@ -4,12 +4,6 @@
 
 Owns governed datasets, KPI models, and warehouse-sync posture so heavy analytics does not sprawl into transactional plugins.
 
-The Lightdash-class authoring/product layer is now implemented beside this
-plugin, not inside it. Treat `analytics-bi-core` as the governance spine and use
-`@platform/analytics`, `/api/analytics-bi/*`, and
-`admin-panel/src/examples/analytics-bi/*` for explorer/chart/dashboard product
-flows.
-
 ## Code map
 
 - Package root: `framework/builtin-plugins/analytics-bi-core`
@@ -29,8 +23,6 @@ flows.
 - Do not document generic WordPress-style hooks unless they are explicitly exported.
 - Do not promise live external connectors, distributed worker infrastructure, or portal/admin surfaces that are not present in the code.
 - Do not claim a higher maturity tier than `Hardened` without adding the missing verification and operational depth first.
-- Do not claim live warehouse/dbt connector parity from the native BI product
-  layer until the corresponding `WarehouseAdapter` is implemented and tested.
 
 ## Verification
 
