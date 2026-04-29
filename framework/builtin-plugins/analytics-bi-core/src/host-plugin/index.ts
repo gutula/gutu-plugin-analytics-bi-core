@@ -33,6 +33,19 @@ export const hostPlugin: HostPlugin = {
     { mountPath: "/auto-email-reports", router: autoEmailRoutes },
     { mountPath: "/analytics-bi", router: analyticsBiRoutes },
   ],
+  resources: [
+    "analytics-bi.chart",
+    "analytics-bi.chart-version",
+    "analytics-bi.dashboard",
+    "analytics-bi.dashboard-content",
+    "analytics-bi.dashboard-version",
+    "analytics-bi.delivery-run",
+    "analytics-bi.explore",
+    "analytics-bi.report",
+    "analytics-bi.schedule",
+    "analytics-bi.share-url",
+    "analytics-bi.space",
+  ],
   start: () => {
     stopLeader = withLeadership("analytics:auto-email", () => {
       startAutoEmailScheduler();
